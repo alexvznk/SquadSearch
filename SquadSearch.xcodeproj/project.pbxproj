@@ -12,9 +12,13 @@
 		71669AA22048E00900D7940A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA02048E00900D7940A /* Main.storyboard */; };
 		71669AA42048E00900D7940A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA32048E00900D7940A /* Assets.xcassets */; };
 		71669AA72048E00900D7940A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA52048E00900D7940A /* LaunchScreen.storyboard */; };
+		71E7B62D2048E3DC006479C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */; };
+		FEF14A234F4714E936D9977F /* Pods_SquadSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C205F184BBBD11F106C1809 /* Pods-SquadSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71669A992048E00900D7940A /* SquadSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71669A9C2048E00900D7940A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71669A9E2048E00900D7940A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		71669AA32048E00900D7940A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71669AA62048E00900D7940A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71669AA82048E00900D7940A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		81636D1413C69FE71BFF15A1 /* Pods-SquadSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF14A234F4714E936D9977F /* Pods_SquadSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A177CE3FDE0EB3C3FB2E10A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		71669A902048E00900D7940A = {
 			isa = PBXGroup;
 			children = (
 				71669A9B2048E00900D7940A /* SquadSearch */,
 				71669A9A2048E00900D7940A /* Products */,
+				CFE6DFFDA65885F2B92D5275 /* Pods */,
+				2A177CE3FDE0EB3C3FB2E10A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +71,7 @@
 		71669A9B2048E00900D7940A /* SquadSearch */ = {
 			isa = PBXGroup;
 			children = (
+				71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */,
 				71669A9C2048E00900D7940A /* AppDelegate.swift */,
 				71669A9E2048E00900D7940A /* ViewController.swift */,
 				71669AA02048E00900D7940A /* Main.storyboard */,
@@ -64,6 +82,15 @@
 			path = SquadSearch;
 			sourceTree = "<group>";
 		};
+		CFE6DFFDA65885F2B92D5275 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C205F184BBBD11F106C1809 /* Pods-SquadSearch.debug.xcconfig */,
+				81636D1413C69FE71BFF15A1 /* Pods-SquadSearch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71669AAB2048E00900D7940A /* Build configuration list for PBXNativeTarget "SquadSearch" */;
 			buildPhases = (
+				3DE697709FBA40DAB4E6DF34 /* [CP] Check Pods Manifest.lock */,
 				71669A952048E00900D7940A /* Sources */,
 				71669A962048E00900D7940A /* Frameworks */,
 				71669A972048E00900D7940A /* Resources */,
+				AB8725325B65A5ACFE1E7846 /* [CP] Embed Pods Frameworks */,
+				A5073E0C9F7DABBC255B5E65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,12 +154,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				71669AA72048E00900D7940A /* LaunchScreen.storyboard in Resources */,
+				71E7B62D2048E3DC006479C0 /* GoogleService-Info.plist in Resources */,
 				71669AA42048E00900D7940A /* Assets.xcassets in Resources */,
 				71669AA22048E00900D7940A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DE697709FBA40DAB4E6DF34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SquadSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5073E0C9F7DABBC255B5E65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB8725325B65A5ACFE1E7846 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71669A952048E00900D7940A /* Sources */ = {
@@ -272,6 +366,7 @@
 		};
 		71669AAC2048E00900D7940A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C205F184BBBD11F106C1809 /* Pods-SquadSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +381,7 @@
 		};
 		71669AAD2048E00900D7940A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81636D1413C69FE71BFF15A1 /* Pods-SquadSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
