@@ -13,6 +13,9 @@
 		71669AA42048E00900D7940A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA32048E00900D7940A /* Assets.xcassets */; };
 		71669AA72048E00900D7940A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA52048E00900D7940A /* LaunchScreen.storyboard */; };
 		71E7B62D2048E3DC006479C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */; };
+		71E7B6392048EB0F006479C0 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7B6382048EB0F006479C0 /* MyProfileViewController.swift */; };
+		71E7B63B2048EB4E006479C0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E7B63A2048EB4E006479C0 /* Login.storyboard */; };
+		71E7B63D2048ECC7006479C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7B63C2048ECC7006479C0 /* LoginViewController.swift */; };
 		FEF14A234F4714E936D9977F /* Pods_SquadSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		71669AA62048E00900D7940A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71669AA82048E00900D7940A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		71E7B6382048EB0F006479C0 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		71E7B63A2048EB4E006479C0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		71E7B63C2048ECC7006479C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81636D1413C69FE71BFF15A1 /* Pods-SquadSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,15 +77,82 @@
 		71669A9B2048E00900D7940A /* SquadSearch */ = {
 			isa = PBXGroup;
 			children = (
-				71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */,
 				71669A9C2048E00900D7940A /* AppDelegate.swift */,
-				71669A9E2048E00900D7940A /* ViewController.swift */,
-				71669AA02048E00900D7940A /* Main.storyboard */,
 				71669AA32048E00900D7940A /* Assets.xcassets */,
-				71669AA52048E00900D7940A /* LaunchScreen.storyboard */,
-				71669AA82048E00900D7940A /* Info.plist */,
+				71E7B6332048E776006479C0 /* Storyboards */,
+				71E7B62E2048E74D006479C0 /* Controllers */,
+				71E7B6352048E781006479C0 /* Views */,
+				71E7B6342048E77C006479C0 /* Supporting Files */,
+				71E7B6322048E770006479C0 /* Services */,
+				71E7B6312048E769006479C0 /* Models */,
+				71E7B6302048E75F006479C0 /* Helpers */,
+				71E7B62F2048E758006479C0 /* Extensions */,
 			);
 			path = SquadSearch;
+			sourceTree = "<group>";
+		};
+		71E7B62E2048E74D006479C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				71669A9E2048E00900D7940A /* ViewController.swift */,
+				71E7B6382048EB0F006479C0 /* MyProfileViewController.swift */,
+				71E7B63C2048ECC7006479C0 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		71E7B62F2048E758006479C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		71E7B6302048E75F006479C0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		71E7B6312048E769006479C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71E7B6322048E770006479C0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		71E7B6332048E776006479C0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				71669AA02048E00900D7940A /* Main.storyboard */,
+				71669AA52048E00900D7940A /* LaunchScreen.storyboard */,
+				71E7B63A2048EB4E006479C0 /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		71E7B6342048E77C006479C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71669AA82048E00900D7940A /* Info.plist */,
+				71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71E7B6352048E781006479C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CFE6DFFDA65885F2B92D5275 /* Pods */ = {
@@ -156,6 +229,7 @@
 				71669AA72048E00900D7940A /* LaunchScreen.storyboard in Resources */,
 				71E7B62D2048E3DC006479C0 /* GoogleService-Info.plist in Resources */,
 				71669AA42048E00900D7940A /* Assets.xcassets in Resources */,
+				71E7B63B2048EB4E006479C0 /* Login.storyboard in Resources */,
 				71669AA22048E00900D7940A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E7B63D2048ECC7006479C0 /* LoginViewController.swift in Sources */,
+				71E7B6392048EB0F006479C0 /* MyProfileViewController.swift in Sources */,
 				71669A9F2048E00900D7940A /* ViewController.swift in Sources */,
 				71669A9D2048E00900D7940A /* AppDelegate.swift in Sources */,
 			);
@@ -370,7 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SquadSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SquadSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.ics.SquadSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,7 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SquadSearch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SquadSearch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uci.ics.SquadSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
