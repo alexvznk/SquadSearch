@@ -9,21 +9,95 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LoginPage-->
         <scene sceneID="Ci6-uc-nZt">
             <objects>
-                <viewController title="LoginPage" id="Z10-QA-b1X" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="LoginPage" id="Z10-QA-b1X" customClass="LoginViewController" customModule="SquadSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sws-GZ-15J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.61646123345568227" blue="0.2397825238519854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKX-t3-h1Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SquadSearch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGB-tT-d7N">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to post your own ads." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf2-5U-Xk1">
+                                        <rect key="frame" x="0.0" y="158.5" width="375" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.61646123350000004" blue="0.23978252389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lf2-5U-Xk1" secondAttribute="trailing" id="A65-Em-b3l"/>
+                                    <constraint firstItem="wGB-tT-d7N" firstAttribute="leading" secondItem="wKX-t3-h1Z" secondAttribute="leading" id="BWm-sU-6Ef"/>
+                                    <constraint firstAttribute="trailing" secondItem="wGB-tT-d7N" secondAttribute="trailing" id="Pod-tX-Tdx"/>
+                                    <constraint firstItem="lf2-5U-Xk1" firstAttribute="top" secondItem="wGB-tT-d7N" secondAttribute="bottom" constant="25" id="bgR-ss-hF9"/>
+                                    <constraint firstAttribute="height" constant="265" id="jEu-1J-v7E"/>
+                                    <constraint firstItem="lf2-5U-Xk1" firstAttribute="leading" secondItem="wKX-t3-h1Z" secondAttribute="leading" id="tSH-V4-Wc2"/>
+                                    <constraint firstItem="wGB-tT-d7N" firstAttribute="top" secondItem="wKX-t3-h1Z" secondAttribute="top" constant="90" id="urg-z8-SGL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2S-2C-7ie">
+                                <rect key="frame" x="37.5" y="315" width="300" height="60"/>
+                                <color key="backgroundColor" red="0.31048497329911517" green="0.7854684344249574" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3UG-cD-nMn"/>
+                                    <constraint firstAttribute="height" constant="60" id="imN-Jr-DwG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Sign up or Log in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Z10-QA-b1X" eventType="touchUpInside" id="Xjk-p3-K8t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLy-fl-GXh">
+                                <rect key="frame" x="37" y="395" width="300" height="60"/>
+                                <color key="backgroundColor" red="0.31048497330000002" green="0.78546843440000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="efM-zS-9xG"/>
+                                    <constraint firstAttribute="height" constant="60" id="pwr-it-ps7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnButtonTapped:" destination="Z10-QA-b1X" eventType="touchUpInside" id="Lq3-bf-zpk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GLy-fl-GXh" firstAttribute="centerX" secondItem="Sws-GZ-15J" secondAttribute="centerX" id="0HH-ZB-ySZ"/>
+                            <constraint firstItem="7zq-lY-bDf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GLy-fl-GXh" secondAttribute="bottom" id="3Nx-Ud-0jl"/>
+                            <constraint firstItem="wKX-t3-h1Z" firstAttribute="top" secondItem="Sws-GZ-15J" secondAttribute="top" id="Bc5-YP-S8g"/>
+                            <constraint firstItem="g2S-2C-7ie" firstAttribute="centerX" secondItem="Sws-GZ-15J" secondAttribute="centerX" id="MYi-22-NAm"/>
+                            <constraint firstItem="7zq-lY-bDf" firstAttribute="trailing" secondItem="wKX-t3-h1Z" secondAttribute="trailing" id="VvA-Ib-9Bh"/>
+                            <constraint firstItem="g2S-2C-7ie" firstAttribute="top" secondItem="wKX-t3-h1Z" secondAttribute="bottom" constant="50" id="fkY-ap-nTj"/>
+                            <constraint firstItem="wKX-t3-h1Z" firstAttribute="leading" secondItem="7zq-lY-bDf" secondAttribute="leading" id="gyh-M1-BzG"/>
+                            <constraint firstItem="GLy-fl-GXh" firstAttribute="top" secondItem="g2S-2C-7ie" secondAttribute="bottom" constant="20" id="n0E-Cd-0Su"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7zq-lY-bDf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQ8-uG-QG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="100"/>
+            <point key="canvasLocation" x="104.8" y="99.400299850074973"/>
         </scene>
     </scenes>
 </document>

@@ -19,11 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Initialize necessary Firebase configs
         FirebaseApp.configure()
-        // TEMPORARY FOR TESTING: Launch to login screen
-        let storyboard = UIStoryboard(name: "Login", bundle: .main)
-        if let initialViewController = storyboard.instantiateInitialViewController() {
-            window?.rootViewController = initialViewController
-            window?.makeKeyAndVisible()
+        
+        //Log back in automatically if already authenticated on this device, comment out to test login procedure
+        if Auth.auth().currentUser != nil,
+            let userData = UserDefaults.standard.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+            User.setCurrent(user)
         }
         return true
     }

@@ -7,14 +7,30 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 class MyProfileViewController: UIViewController {
 
+    typealias FIRUser = FirebaseAuth.User
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // Do any additional setup after loading the view.
+        //If the user isn't logged in, send them to log in before they can use this part of the app
+        if !User.loggedIn() {
+            let initialViewController = UIStoryboard.initialViewController(for: .login)
+            if let window = view.window {
+                window.rootViewController = initialViewController
+                window.makeKeyAndVisible()
+            }
+            return
+        }
+        
+        print(User.current.uid)
     }
 
     override func didReceiveMemoryWarning() {
