@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class User: NSObject {
     private static var _current: User?
@@ -18,27 +19,29 @@ class User: NSObject {
         }
         return currentUser
     }
-    static func loggedIn() -> Bool {
+    class func loggedIn() -> Bool {
         return _current != nil
     }
-    static func setCurrent(_ user: User) {
-        _current = user
-    }
-    static func clearCurrent() {
-        _current = nil
-    }
-    
-    let uid: String
-    
     class func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
         if writeToUserDefaults {
             let data = NSKeyedArchiver.archivedData(withRootObject: user)
             UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
         }
+        _current = user
+    }
+    class func logOut(writeToUserDefaults: Bool = false) {
+        if writeToUserDefaults {
+            UserDefaults.standard.set(nil, forKey: Constants.UserDefaults.currentUser)
+        }
+        _current = nil
     }
     
-    init(uid: String, username: String) {
+    let uid: String
+    let name: String
+    
+    init(uid: String, name: String) {
         self.uid = uid
+        self.name = name
         
         super.init()
     }
@@ -47,6 +50,7 @@ class User: NSObject {
         guard let _ = snapshot.value as? [String : Any]
             else { return nil }
         self.uid = snapshot.key
+        self.name = (Auth.auth().currentUser?.displayName)!
         
         super.init()
     }
@@ -55,6 +59,7 @@ class User: NSObject {
         guard let uid = aDecoder.decodeObject(forKey: Constants.UserDefaults.uid) as? String
             else { return nil }
         self.uid = uid
+        self.name = (Auth.auth().currentUser?.displayName)!
         
         super.init()
     }

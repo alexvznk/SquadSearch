@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7110CDF2204F41BC0018B867 /* SSPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110CDF1204F41BC0018B867 /* SSPhotoHelper.swift */; };
 		71669A9D2048E00900D7940A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71669A9C2048E00900D7940A /* AppDelegate.swift */; };
 		71669A9F2048E00900D7940A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71669A9E2048E00900D7940A /* ViewController.swift */; };
 		71669AA22048E00900D7940A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA02048E00900D7940A /* Main.storyboard */; };
 		71669AA42048E00900D7940A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA32048E00900D7940A /* Assets.xcassets */; };
 		71669AA72048E00900D7940A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA52048E00900D7940A /* LaunchScreen.storyboard */; };
-		716B816A204DEA3D0010C2C1 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 716B8169204DEA3D0010C2C1 /* profile.png */; };
 		716B816C204DEB1B0010C2C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B816B204DEB1B0010C2C1 /* User.swift */; };
 		716B816F204DEDD80010C2C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B816E204DEDD80010C2C1 /* Constants.swift */; };
 		716B8172204DEE9D0010C2C1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B8171204DEE9D0010C2C1 /* Storyboard+Utility.swift */; };
@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3C205F184BBBD11F106C1809 /* Pods-SquadSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7110CDF1204F41BC0018B867 /* SSPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSPhotoHelper.swift; path = SquadSearch/SSPhotoHelper.swift; sourceTree = SOURCE_ROOT; };
 		71669A992048E00900D7940A /* SquadSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71669A9C2048E00900D7940A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71669A9E2048E00900D7940A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		71669AA32048E00900D7940A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71669AA62048E00900D7940A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71669AA82048E00900D7940A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		716B8169204DEA3D0010C2C1 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		716B816B204DEB1B0010C2C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		716B816E204DEDD80010C2C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		716B8171204DEE9D0010C2C1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -97,17 +97,8 @@
 				71E7B6312048E769006479C0 /* Models */,
 				71E7B6302048E75F006479C0 /* Helpers */,
 				716B8170204DEE880010C2C1 /* Extensions */,
-				716B8166204DE9320010C2C1 /* Assets */,
 			);
 			path = SquadSearch;
-			sourceTree = "<group>";
-		};
-		716B8166204DE9320010C2C1 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				716B8169204DEA3D0010C2C1 /* profile.png */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		716B8170204DEE880010C2C1 /* Extensions */ = {
@@ -131,6 +122,7 @@
 		71E7B6302048E75F006479C0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7110CDF1204F41BC0018B867 /* SSPhotoHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -250,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				71669AA72048E00900D7940A /* LaunchScreen.storyboard in Resources */,
-				716B816A204DEA3D0010C2C1 /* profile.png in Resources */,
 				71E7B62D2048E3DC006479C0 /* GoogleService-Info.plist in Resources */,
 				71669AA42048E00900D7940A /* Assets.xcassets in Resources */,
 				71E7B63B2048EB4E006479C0 /* Login.storyboard in Resources */,
@@ -306,6 +297,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -313,6 +305,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -334,6 +327,7 @@
 				716B816C204DEB1B0010C2C1 /* User.swift in Sources */,
 				716B8174204DF3260010C2C1 /* UserService.swift in Sources */,
 				71669A9D2048E00900D7940A /* AppDelegate.swift in Sources */,
+				7110CDF2204F41BC0018B867 /* SSPhotoHelper.swift in Sources */,
 				716B8172204DEE9D0010C2C1 /* Storyboard+Utility.swift in Sources */,
 				716B816F204DEDD80010C2C1 /* Constants.swift in Sources */,
 			);

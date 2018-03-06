@@ -66,11 +66,11 @@ extension LoginViewController: FUIAuthDelegate {
         let userRef = Database.database().reference().child("users").child(firUser.uid)
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let user = User(snapshot: snapshot) {
-                User.setCurrent(user)
+                User.setCurrent(user, writeToUserDefaults: true)
             } else {
                 UserService.create(firUser) { (user) in
                     guard let user = user else { return }
-                    User.setCurrent(user)
+                    User.setCurrent(user, writeToUserDefaults: true)
                 }
             }
             let initialViewController = UIStoryboard.initialViewController(for: .main)

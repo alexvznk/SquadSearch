@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>980178936718-hkiftt26gvk3n577u3nej9tc3rpfdn2l.apps.googleusercontent.com</string>
+	<string>980178936718-pk0si4jpfl37m3dr129f3u1m3gn5stum.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.980178936718-hkiftt26gvk3n577u3nej9tc3rpfdn2l</string>
+	<string>com.googleusercontent.apps.980178936718-pk0si4jpfl37m3dr129f3u1m3gn5stum</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCkE9Sk4ABQyLjnmYpD1npnHbzResTRklE</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>edu.uci.ics</string>
+	<string>edu.uci.ics.SquadSearch</string>
 	<key>PROJECT_ID</key>
 	<string>squadsearch-9fecb</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:980178936718:ios:e2849382a12dc440</string>
+	<string>1:980178936718:ios:caec2436e2383f9f</string>
 	<key>DATABASE_URL</key>
 	<string>https://squadsearch-9fecb.firebaseio.com</string>
 </dict>

@@ -27,4 +27,18 @@ struct UserService {
             })
         }
     }
+    
+    static func avatar(_ firUser: FIRUser, completion: @escaping (UIImage?) -> Void) {
+        let ref = Database.database().reference().child("avatars").child(firUser.uid)
+        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+            guard let dict = snapshot.value as? [String : Any],
+                let imageURL = dict["image_url"] as? String,
+                let imageHeight = dict["image_height"] as? CGFloat
+            else {
+                    return completion(nil)
+            }
+            //Todo
+            return completion(nil)
+        })
+    }
 }
