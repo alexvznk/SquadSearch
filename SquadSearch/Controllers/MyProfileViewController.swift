@@ -15,6 +15,11 @@ class MyProfileViewController: UIViewController {
     
     @IBOutlet var avatarButton: UIButton!
     @IBOutlet var realNameLabel: UILabel!
+    @IBOutlet var steamField: UITextField!
+    @IBOutlet var skypeField: UITextField!
+    @IBOutlet var discordField: UITextField!
+    @IBOutlet var hideNameSwitch: UISwitch!
+    @IBOutlet var usernameField: UITextField!
     
     //Temporary hardcoding
     var gameList: [String] = ["Overwatch"]
@@ -25,7 +30,9 @@ class MyProfileViewController: UIViewController {
         super.viewDidLoad()
         avatarHelper.completionHandler = { image in
             self.avatarChanged = true
-            self.avatarButton.setImage(image, for: .normal)
+            UserService.changeAvatar(of: User.current, to: image) { url in
+                self.avatarButton.kf.setImage(with: url, for: .normal)
+            }
         }
     }
     
@@ -45,7 +52,17 @@ class MyProfileViewController: UIViewController {
             return
         }
         
+        UserService.avatar(of: User.current) { url in
+            if let url = url {
+                self.avatarButton.kf.setImage(with: url, for: .normal)
+            }
+        }
         realNameLabel.text = User.current.name
+        hideNameSwitch.isOn = !User.current.hide_name
+        usernameField.text = User.current.username
+        discordField.text = User.current.discord
+        skypeField.text = User.current.skype
+        steamField.text = User.current.steam
     }
 
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -64,6 +81,19 @@ class MyProfileViewController: UIViewController {
     @IBAction func avatarButtonPressed(_ sender: Any) {
         // Allow the user to change their avatar and save it on the server
         avatarHelper.presentActionSheet(from: self)
+    }
+    
+    @IBAction func saveChangesButtonPressed(_ sender: Any) {
+        let changesDict : [String: Any?] = [Constants.Database.Users.username : usernameField.text,
+                                            Constants.Database.Users.hide_name : !hideNameSwitch.isOn,
+                                            Constants.Database.Users.discord_tag : discordField.text,
+                                            Constants.Database.Users.skype_tag : skypeField.text,
+                                            Constants.Database.Users.steam_profile : steamField.text]
+        UserService.update(User.current, with: changesDict) { user in
+            if let user = user {
+                User.setCurrent(user)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

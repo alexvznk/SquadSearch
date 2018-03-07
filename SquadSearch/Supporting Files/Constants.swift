@@ -18,5 +18,24 @@ struct Constants {
     struct UserDefaults {
         static let currentUser = "currentUser"
         static let uid = "uid"
+        static let username = "username"
+        static let hide_name = "hide_name"
+        static let discord_tag = "discord_tag"
+        static let skype_tag = "skype_tag"
+        static let steam_profile = "steam_profile"
+    }
+    struct Database {
+        static let users = "users"
+        static let avatars = "avatars"
+        struct Avatars {
+            static let image_url = "image_url"
+        }
+        struct Users {
+            static let username = "username"
+            static let hide_name = "hide_name"
+            static let discord_tag = "discord_tag"
+            static let skype_tag = "skype_tag"
+            static let steam_profile = "steam_profile"
+        }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7110CDF2204F41BC0018B867 /* SSPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110CDF1204F41BC0018B867 /* SSPhotoHelper.swift */; };
+		7160CF21204F74120029FF26 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7160CF20204F74120029FF26 /* StorageService.swift */; };
 		71669A9D2048E00900D7940A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71669A9C2048E00900D7940A /* AppDelegate.swift */; };
 		71669A9F2048E00900D7940A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71669A9E2048E00900D7940A /* ViewController.swift */; };
 		71669AA22048E00900D7940A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA02048E00900D7940A /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		3C205F184BBBD11F106C1809 /* Pods-SquadSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7110CDF1204F41BC0018B867 /* SSPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSPhotoHelper.swift; path = SquadSearch/SSPhotoHelper.swift; sourceTree = SOURCE_ROOT; };
+		7160CF20204F74120029FF26 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		71669A992048E00900D7940A /* SquadSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71669A9C2048E00900D7940A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71669A9E2048E00900D7940A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				716B8173204DF3260010C2C1 /* UserService.swift */,
+				7160CF20204F74120029FF26 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				71669A9F2048E00900D7940A /* ViewController.swift in Sources */,
 				716B816C204DEB1B0010C2C1 /* User.swift in Sources */,
 				716B8174204DF3260010C2C1 /* UserService.swift in Sources */,
+				7160CF21204F74120029FF26 /* StorageService.swift in Sources */,
 				71669A9D2048E00900D7940A /* AppDelegate.swift in Sources */,
 				7110CDF2204F41BC0018B867 /* SSPhotoHelper.swift in Sources */,
 				716B8172204DEE9D0010C2C1 /* Storyboard+Utility.swift in Sources */,

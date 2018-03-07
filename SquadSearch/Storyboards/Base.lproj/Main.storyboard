@@ -184,6 +184,9 @@
                                                 <state key="normal" title="Save Changes">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveChangesButtonPressed:" destination="CCO-Ak-t7F" eventType="touchUpInside" id="XGk-ST-g02"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryt-Kv-6Wr">
                                                 <rect key="frame" x="187.5" y="0.0" width="167.5" height="30"/>
@@ -226,7 +229,12 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="CtP-0B-OE1"/>
                     <connections>
                         <outlet property="avatarButton" destination="4KU-yf-8q1" id="WYS-p9-SvQ"/>
+                        <outlet property="discordField" destination="AeT-AU-Pb1" id="ipl-Zw-VVW"/>
+                        <outlet property="hideNameSwitch" destination="p94-Ad-UzM" id="Y4n-d8-Rtr"/>
                         <outlet property="realNameLabel" destination="gQc-yV-gcZ" id="wSp-6S-h0X"/>
+                        <outlet property="skypeField" destination="Pnl-xt-F4s" id="MKz-gI-gpN"/>
+                        <outlet property="steamField" destination="EgF-QQ-JBA" id="mQz-8z-iyG"/>
+                        <outlet property="usernameField" destination="von-5s-PfD" id="x6i-7Q-yXl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrE-8P-aSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
