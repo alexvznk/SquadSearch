@@ -23,8 +23,6 @@ class MyProfileViewController: UIViewController {
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var gameTable: UITableView!
     
-    //Temporary hardcoding
-    var gameList: [String] = ["Overwatch", "Rainbow Six: Siege"]
     var avatarChanged: Bool = false
     let avatarHelper = SSPhotoHelper()
     
@@ -118,12 +116,12 @@ class MyProfileViewController: UIViewController {
 
 extension MyProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameList.count
+        return Constants.gameList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameSelectionCell", for: indexPath) as! GameSelectionCell
-        cell.gameButton.setTitle(gameList[indexPath.row], for: .normal)
+        cell.gameButton.setTitle(Constants.gameList[indexPath.row], for: .normal)
         return cell
     }
 }

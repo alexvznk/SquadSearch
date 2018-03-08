@@ -22,6 +22,7 @@
 		7186D6E02051DBE1007C965D /* ReusableGameAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186D6DF2051DBE1007C965D /* ReusableGameAdController.swift */; };
 		7186D6E22051E16E007C965D /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186D6E12051E16E007C965D /* AdService.swift */; };
 		7186D6E42051E4B7007C965D /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186D6E32051E4B7007C965D /* Ad.swift */; };
+		7186D6E62051EFB6007C965D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7186D6E52051EFB6007C965D /* SearchController.swift */; };
 		71E7B62D2048E3DC006479C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */; };
 		71E7B6392048EB0F006479C0 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7B6382048EB0F006479C0 /* MyProfileViewController.swift */; };
 		71E7B63B2048EB4E006479C0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E7B63A2048EB4E006479C0 /* Login.storyboard */; };
@@ -49,6 +50,7 @@
 		7186D6DF2051DBE1007C965D /* ReusableGameAdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableGameAdController.swift; sourceTree = "<group>"; };
 		7186D6E12051E16E007C965D /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
 		7186D6E32051E4B7007C965D /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		7186D6E52051EFB6007C965D /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		71E7B62C2048E3DC006479C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71E7B6382048EB0F006479C0 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		71E7B63A2048EB4E006479C0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				71E7B6382048EB0F006479C0 /* MyProfileViewController.swift */,
 				71E7B63C2048ECC7006479C0 /* LoginViewController.swift */,
 				7186D6DF2051DBE1007C965D /* ReusableGameAdController.swift */,
+				7186D6E52051EFB6007C965D /* SearchController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				71E7B63D2048ECC7006479C0 /* LoginViewController.swift in Sources */,
 				7186D6DA2051CF99007C965D /* GameSelectionCell.swift in Sources */,
 				71E7B6392048EB0F006479C0 /* MyProfileViewController.swift in Sources */,
+				7186D6E62051EFB6007C965D /* SearchController.swift in Sources */,
 				7186D6E02051DBE1007C965D /* ReusableGameAdController.swift in Sources */,
 				7186D6E22051E16E007C965D /* AdService.swift in Sources */,
 				716B816C204DEB1B0010C2C1 /* User.swift in Sources */,

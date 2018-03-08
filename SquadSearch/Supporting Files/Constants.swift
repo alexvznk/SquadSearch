@@ -9,6 +9,8 @@
 import Foundation
 
 struct Constants {
+    //Temporary hardcoding
+    static var gameList: [String] = ["Overwatch", "Rainbow Six: Siege"]
     struct Controllers {
         static let search = "Search"
         static let profile = "Profile"
