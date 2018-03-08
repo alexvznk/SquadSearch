@@ -148,29 +148,40 @@
                                         <rect key="frame" x="0.0" y="299" width="355" height="229"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameSelectionCell" id="bq9-4w-kCl">
-                                                <rect key="frame" x="0.0" y="28" width="355" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameSelectionCell" rowHeight="50" id="bq9-4w-kCl" customClass="GameSelectionCell" customModule="SquadSearch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="355" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bq9-4w-kCl" id="Cbi-Ot-bL9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="GameViewButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-BB-DM8" userLabel="GameViewButton">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="38.5"/>
+                                                            <rect key="frame" x="5" y="5" width="345" height="39.5"/>
+                                                            <color key="backgroundColor" red="0.31048497330000002" green="0.78546843440000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Game">
-                                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="gameButtonPressed:" destination="bq9-4w-kCl" eventType="touchDown" id="kBU-aA-l7Z"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="GGb-BB-DM8" firstAttribute="leading" secondItem="Cbi-Ot-bL9" secondAttribute="leading" id="7gg-ts-8hw"/>
-                                                        <constraint firstAttribute="bottom" secondItem="GGb-BB-DM8" secondAttribute="bottom" constant="5" id="rLU-qk-7Ku"/>
-                                                        <constraint firstAttribute="trailing" secondItem="GGb-BB-DM8" secondAttribute="trailing" id="rjo-ni-Yso"/>
-                                                        <constraint firstItem="GGb-BB-DM8" firstAttribute="top" secondItem="Cbi-Ot-bL9" secondAttribute="top" id="wDf-AK-9Q2"/>
+                                                        <constraint firstItem="GGb-BB-DM8" firstAttribute="top" secondItem="Cbi-Ot-bL9" secondAttribute="top" constant="5" id="Cix-39-v2h"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GGb-BB-DM8" secondAttribute="bottom" constant="5" id="Eix-Nd-jNy"/>
+                                                        <constraint firstItem="GGb-BB-DM8" firstAttribute="leading" secondItem="Cbi-Ot-bL9" secondAttribute="leading" constant="5" id="N31-ze-2vb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GGb-BB-DM8" secondAttribute="trailing" constant="5" id="atU-xK-5ra"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="gameButton" destination="GGb-BB-DM8" id="mwl-Z2-E2v"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="CCO-Ak-t7F" id="PMi-uO-6nx"/>
+                                            <outlet property="delegate" destination="CCO-Ak-t7F" id="GcZ-HL-M2c"/>
+                                        </connections>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MZs-Db-cc1">
                                         <rect key="frame" x="0.0" y="548" width="355" height="30"/>
@@ -230,6 +241,7 @@
                     <connections>
                         <outlet property="avatarButton" destination="4KU-yf-8q1" id="WYS-p9-SvQ"/>
                         <outlet property="discordField" destination="AeT-AU-Pb1" id="ipl-Zw-VVW"/>
+                        <outlet property="gameTable" destination="aZv-VV-Ib9" id="kEk-mZ-3SD"/>
                         <outlet property="hideNameSwitch" destination="p94-Ad-UzM" id="Y4n-d8-Rtr"/>
                         <outlet property="realNameLabel" destination="gQc-yV-gcZ" id="wSp-6S-h0X"/>
                         <outlet property="skypeField" destination="Pnl-xt-F4s" id="MKz-gI-gpN"/>

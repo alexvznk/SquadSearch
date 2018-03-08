@@ -10,7 +10,6 @@ import Foundation
 import FirebaseAuth.FIRUser
 import FirebaseDatabase
 import FirebaseStorage
-import Kingfisher
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -35,7 +34,7 @@ struct UserService {
         }
     }
     
-    static func update(_ user: User, with: [String : Any], completion: @escaping (User?) -> Void) {
+    static func update(_ user: User, with: [String : Any?], completion: @escaping (User?) -> Void) {
         let ref = Database.database().reference().child(Constants.Database.users).child(user.uid)
         let newInfo: [String : Any?] = [Constants.Database.Users.username : with[Constants.Database.Users.username] as! String,
                                             Constants.Database.Users.hide_name : with[Constants.Database.Users.hide_name] as! Bool,

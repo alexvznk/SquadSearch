@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Kingfisher
 
 class MyProfileViewController: UIViewController {
 
@@ -20,17 +21,18 @@ class MyProfileViewController: UIViewController {
     @IBOutlet var discordField: UITextField!
     @IBOutlet var hideNameSwitch: UISwitch!
     @IBOutlet var usernameField: UITextField!
+    @IBOutlet var gameTable: UITableView!
     
     //Temporary hardcoding
-    var gameList: [String] = ["Overwatch"]
+    var gameList: [String] = ["Overwatch", "Rainbow Six: Siege"]
     var avatarChanged: Bool = false
     let avatarHelper = SSPhotoHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        avatarHelper.completionHandler = { image in
+        avatarHelper.completionHandler = { [unowned self] image in
             self.avatarChanged = true
-            UserService.changeAvatar(of: User.current, to: image) { url in
+            UserService.changeAvatar(of: User.current, to: image) { [unowned self] url in
                 self.avatarButton.kf.setImage(with: url, for: .normal)
             }
         }
@@ -52,7 +54,7 @@ class MyProfileViewController: UIViewController {
             return
         }
         
-        UserService.avatar(of: User.current) { url in
+        UserService.avatar(of: User.current) { [unowned self] url in
             if let url = url {
                 self.avatarButton.kf.setImage(with: url, for: .normal)
             }
@@ -112,4 +114,16 @@ class MyProfileViewController: UIViewController {
     }
     */
 
+}
+
+extension MyProfileViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gameList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameSelectionCell", for: indexPath) as! GameSelectionCell
+        cell.gameButton.setTitle(gameList[indexPath.row], for: .normal)
+        return cell
+    }
 }

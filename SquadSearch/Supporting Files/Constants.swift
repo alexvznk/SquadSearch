@@ -27,6 +27,7 @@ struct Constants {
     struct Database {
         static let users = "users"
         static let avatars = "avatars"
+        static let ads = "ads"
         struct Avatars {
             static let image_url = "image_url"
         }
@@ -36,6 +37,11 @@ struct Constants {
             static let discord_tag = "discord_tag"
             static let skype_tag = "skype_tag"
             static let steam_profile = "steam_profile"
+        }
+        struct Ads {
+            static let skill_rating = "skill_rating"
+            static let role = "role"
+            static let commitment = "desired_commitment"
         }
     }
 }
