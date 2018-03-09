@@ -21,4 +21,18 @@ struct AdService {
             return completion(Ad(snapshot))
         })
     }
+    
+    static func all(for game: String, completion: @escaping ([Ad]) -> Void) {
+        let ref = Database.database().reference().child(Constants.Database.ads).child(game)
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            var ads: [Ad] = []
+            let adList = snapshot.children
+            while let child = adList.nextObject() as? DataSnapshot {
+                if let ad = Ad(child) {
+                    ads.append(ad)
+                }
+            }
+            return completion(ads)
+        })
+    }
 }

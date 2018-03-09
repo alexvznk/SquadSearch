@@ -43,6 +43,8 @@ class User: NSObject {
     var discord: String?
     var skype: String?
     var steam: String?
+    var latitude: Float?
+    var longitude: Float?
     
     init(uid: String, name: String) {
         self.uid = uid

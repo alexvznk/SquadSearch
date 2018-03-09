@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7160CF21204F74120029FF26 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7160CF20204F74120029FF26 /* StorageService.swift */; };
+		71649C86205226D30005C4A4 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71649C85205226D30005C4A4 /* LocationService.swift */; };
 		71669A9D2048E00900D7940A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71669A9C2048E00900D7940A /* AppDelegate.swift */; };
 		71669AA22048E00900D7940A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA02048E00900D7940A /* Main.storyboard */; };
 		71669AA42048E00900D7940A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71669AA32048E00900D7940A /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		3C205F184BBBD11F106C1809 /* Pods-SquadSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SquadSearch/Pods-SquadSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		44D211CE5C575E6F1B366A82 /* Pods_SquadSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7160CF20204F74120029FF26 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		71649C85205226D30005C4A4 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		71669A992048E00900D7940A /* SquadSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71669A9C2048E00900D7940A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71669AA12048E00900D7940A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				716B8173204DF3260010C2C1 /* UserService.swift */,
 				7160CF20204F74120029FF26 /* StorageService.swift */,
 				7186D6E12051E16E007C965D /* AdService.swift */,
+				71649C85205226D30005C4A4 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				7186D6E02051DBE1007C965D /* ReusableGameAdController.swift in Sources */,
 				7186D6E22051E16E007C965D /* AdService.swift in Sources */,
 				716B816C204DEB1B0010C2C1 /* User.swift in Sources */,
+				71649C86205226D30005C4A4 /* LocationService.swift in Sources */,
 				716B8174204DF3260010C2C1 /* UserService.swift in Sources */,
 				7186D6DC2051D047007C965D /* SSPhotoHelper.swift in Sources */,
 				7160CF21204F74120029FF26 /* StorageService.swift in Sources */,

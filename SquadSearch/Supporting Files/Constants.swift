@@ -30,6 +30,7 @@ struct Constants {
         static let users = "users"
         static let avatars = "avatars"
         static let ads = "ads"
+        static let location = "location"
         struct Avatars {
             static let image_url = "image_url"
         }
@@ -44,6 +45,10 @@ struct Constants {
             static let skill_rating = "skill_rating"
             static let role = "role"
             static let commitment = "desired_commitment"
+        }
+        struct Location {
+            static let longitude = "longitude"
+            static let latitude = "latitude"
         }
     }
 }

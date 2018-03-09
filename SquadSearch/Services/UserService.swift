@@ -36,12 +36,7 @@ struct UserService {
     
     static func update(_ user: User, with: [String : Any?], completion: @escaping (User?) -> Void) {
         let ref = Database.database().reference().child(Constants.Database.users).child(user.uid)
-        let newInfo: [String : Any?] = [Constants.Database.Users.username : with[Constants.Database.Users.username] as! String,
-                                            Constants.Database.Users.hide_name : with[Constants.Database.Users.hide_name] as! Bool,
-                                            Constants.Database.Users.discord_tag : with[Constants.Database.Users.discord_tag] as! String,
-                                            Constants.Database.Users.skype_tag : with[Constants.Database.Users.skype_tag] as! String,
-                                            Constants.Database.Users.steam_profile : with[Constants.Database.Users.steam_profile] as! String]
-        ref.setValue(newInfo) { (error, ref) in
+        ref.setValue(with) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return completion(nil)

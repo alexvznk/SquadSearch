@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Kingfisher
+import CoreLocation
 
 class MyProfileViewController: UIViewController {
 
@@ -23,13 +24,11 @@ class MyProfileViewController: UIViewController {
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var gameTable: UITableView!
     
-    var avatarChanged: Bool = false
     let avatarHelper = SSPhotoHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         avatarHelper.completionHandler = { [unowned self] image in
-            self.avatarChanged = true
             UserService.changeAvatar(of: User.current, to: image) { [unowned self] url in
                 self.avatarButton.kf.setImage(with: url, for: .normal)
             }
@@ -80,6 +79,7 @@ class MyProfileViewController: UIViewController {
     
     @IBAction func avatarButtonPressed(_ sender: Any) {
         // Allow the user to change their avatar and save it on the server
+        saveChangesButtonPressed(sender)
         avatarHelper.presentActionSheet(from: self)
     }
     

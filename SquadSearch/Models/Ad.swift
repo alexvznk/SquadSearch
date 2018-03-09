@@ -10,9 +10,12 @@ import Foundation
 import FirebaseDatabase
 
 class Ad {
+    let uid: String
     let sr: String
     let role: String
     let commitment: String
+    var longitude: Float?
+    var latitude: Float?
     
     init?(_ snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any?],
@@ -21,6 +24,7 @@ class Ad {
             let commitment = dict[Constants.Database.Ads.commitment] as? String else {
                 return nil
         }
+        self.uid = snapshot.key
         self.sr = sr
         self.role = role
         self.commitment = commitment
