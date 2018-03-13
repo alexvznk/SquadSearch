@@ -36,18 +36,19 @@ class ReusableGameAdController: UIViewController {
     }
     
     @IBAction func saveChangesPressed(_ sender: Any) {
-        let data : [String : Any?] = [Constants.Database.Ads.skill_rating : srField.text,
-                                    Constants.Database.Ads.role : roleField.text,
-                                    Constants.Database.Ads.commitment : desiredCommitmentField.text]
-        AdService.postAd(for: User.current, in: game, contents: data)
         if locationManager == nil && CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager.init()
         }
         if let locationManager = locationManager {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-            locationManager.distanceFilter = 500;
-            locationManager.startUpdatingLocation()
+            locationManager.distanceFilter = 500
+            locationManager.requestLocation()
+        } else {
+            let data : [String : Any?] = [Constants.Database.Ads.skill_rating : srField.text,
+                                          Constants.Database.Ads.role : roleField.text,
+                                          Constants.Database.Ads.commitment : desiredCommitmentField.text]
+            AdService.postAd(for: User.current, in: game, contents: data)
         }
     }
     
@@ -74,9 +75,18 @@ extension ReusableGameAdController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         if let loc = location {
+            let data : [String : Any?] = [Constants.Database.Ads.skill_rating : srField.text,
+                                          Constants.Database.Ads.role : roleField.text,
+                                          Constants.Database.Ads.commitment : desiredCommitmentField.text,
+                                          Constants.Database.Location.latitude : loc.coordinate.latitude as Double,
+                                          Constants.Database.Location.longitude : loc.coordinate.longitude as Double]
+            AdService.postAd(for: User.current, in: game, contents: data)
             LocationService.updateLocation(User.current, with: [Constants.Database.Location.latitude : loc.coordinate.latitude as Double,
                                                                 Constants.Database.Location.longitude : loc.coordinate.longitude as Double])
-            locationManager?.stopUpdatingLocation()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
 }

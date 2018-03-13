@@ -14,10 +14,10 @@ class Ad {
     let sr: String
     let role: String
     let commitment: String
-    var longitude: Float?
-    var latitude: Float?
+    var longitude: Double?
+    var latitude: Double?
     
-    init?(_ snapshot: DataSnapshot) {
+    init?(_ snapshot: DataSnapshot, _ location: [Double]?) {
         guard let dict = snapshot.value as? [String : Any?],
             let sr = dict[Constants.Database.Ads.skill_rating] as? String,
             let role = dict[Constants.Database.Ads.role] as? String,
@@ -28,5 +28,9 @@ class Ad {
         self.sr = sr
         self.role = role
         self.commitment = commitment
+        if let location = location {
+            self.longitude = location.first
+            self.latitude = location[1]
+        }
     }
 }
