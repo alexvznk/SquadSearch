@@ -10,6 +10,8 @@ import UIKit
 
 class SearchController: UIViewController {
 
+    @IBOutlet var gamePicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +23,12 @@ class SearchController: UIViewController {
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {
+        AdService.all(for: Constants.gameList[gamePicker.selectedRow(inComponent: 0)]) { [unowned self] ads in
+            let initialViewController = UIStoryboard.initialViewController(for: .search) as! UINavigationController
+            (initialViewController.visibleViewController as! SearchResultsViewController).ads = ads
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
+        }
     }
     
     /*

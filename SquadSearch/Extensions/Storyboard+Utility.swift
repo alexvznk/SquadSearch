@@ -14,6 +14,7 @@ extension UIStoryboard {
         case main
         case login
         case profile
+        case search
 
         var filename: String {
             return rawValue.capitalized

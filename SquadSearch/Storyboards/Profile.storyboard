@@ -135,6 +135,7 @@
                         <outlet property="desiredCommitmentField" destination="Sbi-lq-eAL" id="qnt-gd-Chc"/>
                         <outlet property="gameTitleLabel" destination="OLv-RH-eVc" id="pUn-QA-JBW"/>
                         <outlet property="roleField" destination="EPL-Bp-Uk5" id="ysX-tj-1Tg"/>
+                        <outlet property="saveButton" destination="ueb-hu-bXF" id="cdC-AM-5wD"/>
                         <outlet property="srField" destination="OPo-FX-jiA" id="Eco-FY-5ks"/>
                     </connections>
                 </viewController>

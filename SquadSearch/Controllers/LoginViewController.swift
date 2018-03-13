@@ -67,18 +67,24 @@ extension LoginViewController: FUIAuthDelegate {
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let user = User(snapshot: snapshot) {
                 User.setCurrent(user, writeToUserDefaults: true)
+                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                self.view.window?.rootViewController = initialViewController
+                if let tabController = initialViewController as? UITabBarController {
+                    tabController.selectedIndex = 1
+                }
+                self.view.window?.makeKeyAndVisible()
             } else {
                 UserService.create(firUser) { (user) in
                     guard let user = user else { return }
                     User.setCurrent(user, writeToUserDefaults: true)
+                    let initialViewController = UIStoryboard.initialViewController(for: .main)
+                    self.view.window?.rootViewController = initialViewController
+                    if let tabController = initialViewController as? UITabBarController {
+                        tabController.selectedIndex = 1
+                    }
+                    self.view.window?.makeKeyAndVisible()
                 }
             }
-            let initialViewController = UIStoryboard.initialViewController(for: .main)
-            self.view.window?.rootViewController = initialViewController
-            if let tabController = initialViewController as? UITabBarController {
-                tabController.selectedIndex = 1
-            }
-            self.view.window?.makeKeyAndVisible()
         })
     }
 }

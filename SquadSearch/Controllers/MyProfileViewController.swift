@@ -23,11 +23,19 @@ class MyProfileViewController: UIViewController {
     @IBOutlet var hideNameSwitch: UISwitch!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var gameTable: UITableView!
+    @IBOutlet var saveButton: UIButton!
     
     let avatarHelper = SSPhotoHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        self.skypeField.delegate = self
+        self.steamField.delegate = self
+        self.discordField.delegate = self
+        self.usernameField.delegate = self
         avatarHelper.completionHandler = { [unowned self] image in
             UserService.changeAvatar(of: User.current, to: image) { [unowned self] url in
                 self.avatarButton.kf.setImage(with: url, for: .normal)
@@ -57,7 +65,7 @@ class MyProfileViewController: UIViewController {
             }
         }
         realNameLabel.text = User.current.name
-        hideNameSwitch.isOn = !User.current.hide_name
+        hideNameSwitch.setOn(!User.current.hide_name, animated: false)
         usernameField.text = User.current.username
         discordField.text = User.current.discord
         skypeField.text = User.current.skype
@@ -89,10 +97,12 @@ class MyProfileViewController: UIViewController {
                                             Constants.Database.Users.discord_tag : discordField.text,
                                             Constants.Database.Users.skype_tag : skypeField.text,
                                             Constants.Database.Users.steam_profile : steamField.text]
-        UserService.update(User.current, with: changesDict) { user in
+        saveButton.setTitle("Saving...", for: .normal)
+        UserService.update(User.current, with: changesDict) { [unowned self] user in
             if let user = user {
                 User.setCurrent(user)
             }
+            self.saveButton.setTitle("Save Changes", for: .normal)
         }
     }
     
@@ -123,5 +133,12 @@ extension MyProfileViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameSelectionCell", for: indexPath) as! GameSelectionCell
         cell.gameButton.setTitle(Constants.gameList[indexPath.row], for: .normal)
         return cell
+    }
+}
+
+extension MyProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }

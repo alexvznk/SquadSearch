@@ -61,6 +61,19 @@ struct UserService {
         })
     }
     
+    static func avatar(of uid: String, completion: @escaping (URL?) -> Void) {
+        let ref = Database.database().reference().child(Constants.Database.avatars).child(uid)
+        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+            guard let dict = snapshot.value as? [String : Any],
+                let imageURL = dict[Constants.Database.Avatars.image_url] as? String
+                else {
+                    return completion(nil)
+            }
+            let url = URL(string: imageURL)
+            return completion(url)
+        })
+    }
+    
     static func changeAvatar(of user: User, to image: UIImage, completion: @escaping (URL?) -> Void) {
         let imageRef = Storage.storage().reference().child(user.uid).child(String(NSDate().timeIntervalSince1970))
         StorageService.uploadImage(image, at: imageRef) { (img) in

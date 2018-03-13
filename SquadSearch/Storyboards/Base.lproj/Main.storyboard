@@ -50,7 +50,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="269" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-Kt-1Ji">
                                                         <rect key="frame" x="0.0" y="35" width="269" height="31"/>
@@ -106,26 +106,26 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-uq-xRK" userLabel="Text Field Stack">
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-uq-xRK" userLabel="Text Field Stack">
                                                 <rect key="frame" x="150" y="0.0" width="205" height="100"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="DiscordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="None#0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AeT-AU-Pb1" userLabel="DiscordTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="205" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="SkypeTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N/A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pnl-xt-F4s" userLabel="SkypeTextField">
                                                         <rect key="frame" x="0.0" y="35" width="205" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="SteamTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N/A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-QQ-JBA" userLabel="SteamTextField">
                                                         <rect key="frame" x="0.0" y="70" width="205" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -244,6 +244,7 @@
                         <outlet property="gameTable" destination="aZv-VV-Ib9" id="kEk-mZ-3SD"/>
                         <outlet property="hideNameSwitch" destination="p94-Ad-UzM" id="Y4n-d8-Rtr"/>
                         <outlet property="realNameLabel" destination="gQc-yV-gcZ" id="wSp-6S-h0X"/>
+                        <outlet property="saveButton" destination="jW7-f2-6Hz" id="63i-If-mS5"/>
                         <outlet property="skypeField" destination="Pnl-xt-F4s" id="MKz-gI-gpN"/>
                         <outlet property="steamField" destination="EgF-QQ-JBA" id="mQz-8z-iyG"/>
                         <outlet property="usernameField" destination="von-5s-PfD" id="x6i-7Q-yXl"/>
@@ -301,6 +302,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="wQ1-Hf-s3Z"/>
+                    <connections>
+                        <outlet property="gamePicker" destination="Mfm-xs-SS9" id="nl4-iw-Ced"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
