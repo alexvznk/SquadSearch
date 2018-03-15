@@ -55,10 +55,11 @@ class User: NSObject {
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any?],
-            let hide_name = dict[Constants.Database.Users.hide_name] as? Bool
+            let hide_name = dict[Constants.Database.Users.hide_name] as? Bool,
+            let real_name = dict[Constants.Database.Users.real_name] as? String
             else { return nil }
         self.uid = snapshot.key
-        self.name = (Auth.auth().currentUser?.displayName)!
+        self.name = real_name
         self.hide_name = hide_name
         self.username = dict[Constants.Database.Users.username] as? String
         self.discord = dict[Constants.Database.Users.discord_tag] as? String

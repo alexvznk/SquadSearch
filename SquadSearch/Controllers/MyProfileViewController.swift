@@ -92,17 +92,19 @@ class MyProfileViewController: UIViewController {
     }
     
     @IBAction func saveChangesButtonPressed(_ sender: Any) {
-        let changesDict : [String: Any?] = [Constants.Database.Users.username : usernameField.text,
+        let changesDict : [String: Any] = [Constants.Database.Users.username : usernameField.text ?? "",
                                             Constants.Database.Users.hide_name : !hideNameSwitch.isOn,
-                                            Constants.Database.Users.discord_tag : discordField.text,
-                                            Constants.Database.Users.skype_tag : skypeField.text,
-                                            Constants.Database.Users.steam_profile : steamField.text]
+                                            Constants.Database.Users.discord_tag : discordField.text ?? "",
+                                            Constants.Database.Users.skype_tag : skypeField.text ?? "",
+                                            Constants.Database.Users.steam_profile : steamField.text ?? ""]
         saveButton.setTitle("Saving...", for: .normal)
         UserService.update(User.current, with: changesDict) { [unowned self] user in
             if let user = user {
                 User.setCurrent(user)
+                self.saveButton.setTitle("Save Changes", for: .normal)
+            } else {
+                self.saveButton.setTitle("Save Failed", for: .normal)
             }
-            self.saveButton.setTitle("Save Changes", for: .normal)
         }
     }
     

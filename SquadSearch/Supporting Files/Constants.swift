@@ -31,10 +31,12 @@ struct Constants {
         static let avatars = "avatars"
         static let ads = "ads"
         static let location = "location"
+        static let favorites = "favorites"
         struct Avatars {
             static let image_url = "image_url"
         }
         struct Users {
+            static let real_name = "real_name"
             static let username = "username"
             static let hide_name = "hide_name"
             static let discord_tag = "discord_tag"

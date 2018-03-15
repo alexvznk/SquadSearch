@@ -23,9 +23,13 @@ class SearchController: UIViewController {
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {
+        if let sender = sender as? UIButton {
+            sender.setTitle("Searching...", for: .normal)
+        }
         AdService.all(for: Constants.gameList[gamePicker.selectedRow(inComponent: 0)]) { [unowned self] ads in
             let initialViewController = UIStoryboard.initialViewController(for: .search) as! UINavigationController
             (initialViewController.visibleViewController as! SearchResultsViewController).ads = ads
+            (initialViewController.visibleViewController as! SearchResultsViewController).game = Constants.gameList[self.gamePicker.selectedRow(inComponent: 0)]
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
         }

@@ -64,6 +64,7 @@ class ReusableGameAdController: UIViewController {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
             locationManager.distanceFilter = 500
+            locationManager.requestWhenInUseAuthorization()
             locationManager.requestLocation()
             saveButton.setTitle("Saving...", for: .normal)
         } else {

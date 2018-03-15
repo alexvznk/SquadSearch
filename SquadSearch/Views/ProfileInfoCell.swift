@@ -15,6 +15,8 @@ class ProfileInfoCell: UITableViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var avatar: UIImageView!
     var ad: Ad!
+    var game: String!
+    weak var controller: UINavigationController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,4 +40,12 @@ class ProfileInfoCell: UITableViewCell {
         }
     }
 
+    @IBAction func gotoProfile(_ sender: Any) {
+        let viewController = UIStoryboard.viewController(for: .search, identifier: "ReusableProfileController") as? ProfileViewController
+        if let viewController = viewController {
+            viewController.ad = self.ad
+            viewController.game = self.game
+            self.controller.pushViewController(viewController, animated: true)
+        }
+    }
 }

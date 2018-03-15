@@ -17,7 +17,8 @@ struct UserService {
     static func create(_ firUser: FIRUser, completion: @escaping (User?) -> Void) {
         //Todo: Add stuff to database
         let ref = Database.database().reference().child(Constants.Database.users).child(firUser.uid)
-        let defaultInfo: [String : Any?] = [Constants.Database.Users.username : nil,
+        let defaultInfo: [String : Any?] = [Constants.Database.Users.real_name: firUser.displayName,
+                                            Constants.Database.Users.username : nil,
                                             Constants.Database.Users.hide_name : true,
                                             Constants.Database.Users.discord_tag : nil,
                                             Constants.Database.Users.skype_tag : nil,
@@ -34,9 +35,9 @@ struct UserService {
         }
     }
     
-    static func update(_ user: User, with: [String : Any?], completion: @escaping (User?) -> Void) {
+    static func update(_ user: User, with: [String : Any], completion: @escaping (User?) -> Void) {
         let ref = Database.database().reference().child(Constants.Database.users).child(user.uid)
-        ref.setValue(with) { (error, ref) in
+        ref.updateChildValues(with) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return completion(nil)
@@ -46,6 +47,14 @@ struct UserService {
                 return completion(user)
             })
         }
+    }
+    
+    static func fetch(_ uid: String, completion: @escaping (User?) -> Void) {
+        let ref = Database.database().reference().child(Constants.Database.users).child(uid)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let user = User(snapshot: snapshot)
+            return completion(user)
+        })
     }
     
     static func avatar(of user: User, completion: @escaping (URL?) -> Void) {

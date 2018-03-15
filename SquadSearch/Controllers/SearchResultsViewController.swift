@@ -51,6 +51,8 @@ extension SearchResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileInfoCell", for: indexPath) as! ProfileInfoCell
         cell.ad = self.ads[indexPath.row]
+        cell.game = self.game
+        cell.controller = self.navigationController
         cell.updateAd()
         return cell
     }
