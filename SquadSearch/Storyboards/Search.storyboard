@@ -147,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-CS-UJr" userLabel="Profile Stack">
-                                <rect key="frame" x="10" y="30" width="355" height="209"/>
+                                <rect key="frame" x="10" y="30" width="355" height="574"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-ET-CAm" userLabel="Avatar/Name Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="51"/>
@@ -284,9 +284,17 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Tr-Dr-Ef5">
+                                        <rect key="frame" x="0.0" y="219" width="355" height="355"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4Tr-Dr-Ef5" secondAttribute="height" multiplier="1:1" id="XM6-JN-Wbm"/>
+                                        </constraints>
+                                    </mapView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4Tr-Dr-Ef5" secondAttribute="trailing" id="H9c-gP-aov"/>
                                     <constraint firstAttribute="trailing" secondItem="vfC-ET-CAm" secondAttribute="trailing" id="J9Q-yr-wZq"/>
+                                    <constraint firstItem="4Tr-Dr-Ef5" firstAttribute="leading" secondItem="SPh-CS-UJr" secondAttribute="leading" id="dds-Jb-2jI"/>
                                     <constraint firstItem="vfC-ET-CAm" firstAttribute="leading" secondItem="SPh-CS-UJr" secondAttribute="leading" id="oCg-F6-6aR"/>
                                 </constraints>
                             </stackView>
@@ -305,6 +313,7 @@
                         <outlet property="desiredCommitmentLabel" destination="Uh7-Ir-D7j" id="gZU-iR-J4v"/>
                         <outlet property="discordLabel" destination="ggJ-mI-oEt" id="1tC-5y-qZU"/>
                         <outlet property="favoriteButton" destination="aK2-rH-c4x" id="tMq-Pj-YMm"/>
+                        <outlet property="mapView" destination="4Tr-Dr-Ef5" id="c6F-oL-6Hs"/>
                         <outlet property="realNameLabel" destination="4F7-38-uPK" id="FoX-Fb-5Fx"/>
                         <outlet property="roleLabel" destination="eYe-G6-D67" id="7Da-2i-G0l"/>
                         <outlet property="skypeLabel" destination="XVe-1e-avH" id="UVQ-3b-UDZ"/>

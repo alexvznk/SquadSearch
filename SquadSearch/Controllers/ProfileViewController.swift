@@ -8,11 +8,13 @@
 
 import UIKit
 import Kingfisher
+import MapKit
 
 class ProfileViewController: UIViewController {
     var ad: Ad!
     var game: String!
     
+    @IBOutlet var mapView: MKMapView!
     @IBOutlet var desiredCommitmentLabel: UILabel!
     @IBOutlet var roleLabel: UILabel!
     @IBOutlet var srLabel: UILabel!
