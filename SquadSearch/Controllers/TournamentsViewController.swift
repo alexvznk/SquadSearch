@@ -51,6 +51,7 @@ class TournamentsViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var gameTable: UITableView!
     
+    @IBOutlet weak var segmentedCntrl: UISegmentedControl!
     
     var games = [Games]()
     
@@ -65,32 +66,94 @@ class TournamentsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+       
+        switch(segmentedCntrl.selectedSegmentIndex) {
+        case 0:
+            return returnGameArray(forGame: "Dota 2").count
+        case 1:
+            return returnGameArray(forGame: "Overwatch").count
+        case 2:
+            return returnGameArray(forGame: "LoL").count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = gameTable.dequeueReusableCell(withIdentifier: "matchCell") as? MatchCell {
             cell.selectionStyle = .none
-            cell.gameName.text = games[indexPath.row].name
-            cell.gameDate.text = convertString(string: games[indexPath.row].begin_at)
             
-            if games[indexPath.row].opponents.count == 2 {
+            let dota2Games = returnGameArray(forGame: "Dota 2")
+            let overwatchGames = returnGameArray(forGame: "Overwatch")
+            let lolGames = returnGameArray(forGame: "LoL")
+            
+            switch(segmentedCntrl.selectedSegmentIndex) {
+            case 0:
+                return updateCell(for: cell, cellIndex: indexPath.row, andGameArray: dota2Games)
+            case 1:
+                return updateCell(for: cell, cellIndex: indexPath.row, andGameArray: overwatchGames)
+            case 2:
+                return updateCell(for: cell, cellIndex: indexPath.row, andGameArray: lolGames)
                 
-                if let imageUrl1 = games[indexPath.row].opponents[0].opponent.image_url{
-                    let url = URL(string: imageUrl1)!
-                    cell.teamFirstLogo.kf.setImage(with: url)
-                }
-                if let imageUrl2 = games[indexPath.row].opponents[1].opponent.image_url{
-                    let url = URL(string: imageUrl2)!
-                    cell.teamSecondLogo.kf.setImage(with: url)
-                }
+            default:
+                return MatchCell()
             }
-            
-            return cell
         }
+        
         return MatchCell()
     }
     
+    
+    
+    func returnGameArray (forGame gameName: String) -> [Games] {
+        
+        var gameArray = [Games]()
+        
+        for game in games {
+            if game.videogame.name == gameName {
+            gameArray.append(game)
+            }
+        }
+      return gameArray
+    }
+    
+    
+    func updateCell(for cell: MatchCell, cellIndex index: Int, andGameArray gameArray: [Games] ) -> MatchCell {
+        
+        
+        cell.gameName.text = gameArray[index].name
+        cell.gameDate.text = convertString(string: gameArray[index].begin_at)
+        
+        if gameArray[index].opponents.count == 2 {
+            
+            if let imageUrl1 = gameArray[index].opponents[0].opponent.image_url{
+                let url = URL(string: imageUrl1)!
+                cell.teamFirstLogo.kf.setImage(with: url)
+            }
+            if let imageUrl2 = gameArray[index].opponents[1].opponent.image_url{
+                let url = URL(string: imageUrl2)!
+                cell.teamSecondLogo.kf.setImage(with: url)
+            }
+        } else {
+            cell.teamFirstLogo.image = nil
+            cell.teamSecondLogo.image = nil
+        }
+        
+       return cell
+    }
+    
+    
+    func convertString(string date: String) -> String {
+        
+        let formatter = ISO8601DateFormatter()
+        let dateISO = formatter.date(from: date)
+        if dateISO != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "d MMM yyyy, HH:mm"
+            return dateFormatter.string(from: dateISO!)
+        }
+        return date
+    }
     
     
     @objc func fetchData() {
@@ -116,30 +179,35 @@ class TournamentsViewController: UIViewController, UITableViewDataSource, UITabl
         refreshControl.endRefreshing()
     }
     
-    
-    func convertString(string date: String) -> String {
-        
-        let formatter = ISO8601DateFormatter()
-        let dateISO = formatter.date(from: date)
-        if dateISO != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "d MMM yyyy, HH:mm"
-            return dateFormatter.string(from: dateISO!)
-        }
-        return date
+   
+    @IBAction func segmentedCntrlChanged(_ sender: Any) {
+        gameTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "matchVC", sender: indexPath.row)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let matchVC = segue.destination as? MatchViewController {
-            matchVC.gamesData = games
+       if let matchVC = segue.destination as? MatchViewController {
+        switch(segmentedCntrl.selectedSegmentIndex) {
+        case 0:
+            matchVC.gamesData = returnGameArray(forGame: "Dota 2")
+            matchVC.time = convertString(string: returnGameArray(forGame: "Dota 2")[sender as! Int].begin_at)
+        case 1:
+            matchVC.gamesData = returnGameArray(forGame: "Overwatch")
+            matchVC.time = convertString(string: returnGameArray(forGame: "Overwatch")[sender as! Int].begin_at)
+        case 2:
+            matchVC.gamesData = returnGameArray(forGame: "LoL")
+            matchVC.time = convertString(string: returnGameArray(forGame: "LoL")[sender as! Int].begin_at)
+        default:
+            break
+        }
             matchVC.currentGame = sender as! Int
-            matchVC.time = convertString(string: games[sender as! Int].begin_at)
         }
     }
+    
 }
 
 
