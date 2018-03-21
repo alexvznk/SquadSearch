@@ -39,16 +39,16 @@ class SearchResultsViewController: UIViewController {
                     let lat2 = ad2.latitude,
                     let long1 = ad1.longitude,
                     let long2 = ad2.longitude {
-                        ad1Weight *= 1 + log2(abs(abs(lat1 - location.latitude) - abs(long1 - location.longitude)))
-                        ad2Weight *= 1 + log2(abs(abs(lat2 - location.latitude) - abs(long2 - location.longitude)))
+                        ad1Weight *= log2(2 + abs(abs(lat1 - location.latitude) - abs(long1 - location.longitude)))
+                        ad2Weight *= log2(2 + abs(abs(lat2 - location.latitude) - abs(long2 - location.longitude)))
                 }
             }
             if User.loggedIn(),
                 let sr = self.userSr,
                 let ad1SR = Int(ad1.sr),
                 let ad2SR = Int(ad2.sr) {
-                    ad1Weight *= 1 + log10(Double(abs(sr - ad1SR)))
-                    ad2Weight *= 1 + log10(Double(abs(sr - ad2SR)))
+                    ad1Weight *= log10(10 + Double(abs(sr - ad1SR)))
+                    ad2Weight *= log10(10 + Double(abs(sr - ad2SR)))
             }
             print(String(ad1Weight) + "<" + String(ad2Weight))
             return ad1Weight < ad2Weight
