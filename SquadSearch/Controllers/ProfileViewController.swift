@@ -68,6 +68,16 @@ class ProfileViewController: UIViewController {
                 self.favoriteButton.setImage(UIImage(named: "favoritesSelected"), for: .normal)
             }
         }
+        if let latitude = ad.latitude,
+            let longitude = ad.longitude {
+                var adLocation = CLLocationCoordinate2D()
+                adLocation.latitude = latitude
+                adLocation.longitude = longitude
+                let viewRegion = MKCoordinateRegionMakeWithDistance(adLocation, 10000, 10000)
+                mapView.setRegion(viewRegion, animated: true)
+        } else {
+            mapView.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {

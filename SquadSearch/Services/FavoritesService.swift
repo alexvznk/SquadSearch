@@ -54,7 +54,8 @@ struct FavoritesService {
                     return uid.value
                 })
             }
-            return completion(gameDict)
+            print(favorites)
+            return completion(favorites)
         })
     }
 }
