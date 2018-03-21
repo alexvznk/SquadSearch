@@ -20,9 +20,11 @@ class FavoritesController: UIViewController {
         favoritesTable.dataSource = self
         // Do any additional setup after loading the view.
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listings = []
+        favorites = [:]
         FavoritesService.all() { [unowned self] favorites in
             self.favorites = favorites
             for game in favorites {
@@ -57,21 +59,21 @@ extension FavoritesController: UITableViewDataSource {
         if !User.loggedIn() {
             return 1
         }
-        if self.favorites.isEmpty {
+        if self.listings.isEmpty {
             return 1
         }
-        return self.favorites.count
+        return self.listings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var identifier = "ProfileInfoCell"
         if !User.loggedIn() {
             identifier = "NotLoggedInCell"
-        } else if favorites.isEmpty {
+        } else if listings.isEmpty {
             identifier = "NoFavoritesCell"
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        if !favorites.isEmpty,
+        if !listings.isEmpty,
             let cell = cell as? ProfileInfoCell {
             AdService.fetch(for: listings[indexPath.row].1, in: listings[indexPath.row].0) { ad in
                 cell.ad = ad
